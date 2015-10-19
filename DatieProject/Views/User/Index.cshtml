@@ -1,0 +1,242 @@
+﻿@model DatieProject.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Account Management";
+    var session = Session["User"];
+}
+@if (session != null)
+{ <button class="btn btn-primary" id="AddUser" style="margin-top: 20px; margin-left: 15px"> Add New Member</button>
+    <div class="container body-content" style="margin-top: 30px;">
+        <table id="table" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>Account</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Class</th>
+                @*<th>Major</th>
+                <th>Period</th>*@
+                <th>Phone</th>
+                <th>Email</th>
+                <th>TypeUser</th>
+                <th>CreateDate</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="dialog"></div>
+
+    <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="top: -27px">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Add New Member</h4>
+                </div>
+                <form id="editForm">
+                    <div class="modal-body">
+                        <div class="form-control-manual">
+                            <div class="edit-label">
+                                <label for="ShopName">Name</label>
+                            </div>
+                            <div class="editor-field">
+                                <input id="email" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-control-manual">
+                            <div class="edit-label">
+                                <label for="ShopName">Class</label>
+                            </div>
+                            <div class="editor-field">
+                                <input id="email" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-control-manual">
+                            <div class="edit-label">
+                                <label for="ShopName">Account</label>
+                            </div>
+                            <div class="editor-field">
+                                <input id="email" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-control-manual">
+                            <div class="edit-label">
+                                <label for="ShopAddress">ID</label>
+                            </div>
+                            <div class="editor-field">
+                                <input id="email" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-control-manual">
+                            <div class="edit-label">
+                                <label for="ShopPhone">Period</label>
+                            </div>
+                            <div class="editor-field">
+                                <input id="email" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-control-manual">
+                            <div class="edit-label">
+                                <label for="ShopAddress">Phone</label>
+                            </div>
+                            <div class="editor-field">
+                                <input id="email" type="text" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-control-manual">
+                            <div class="edit-label">
+                                <label for="ShopAddress">Email</label>
+                            </div>
+                            <div class="editor-field">
+                                <input id="email" type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-control-manual">
+                            <div class="edit-label">
+                                <label for="DistrictId">Role</label>
+                            </div>
+                            <div class="editor-field ">
+                                <select class="form-control">
+                                    <option>Employee</option>
+                                    <option>Student</option>
+                                    <option>Instructor</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-control-manual">
+                            <div class="edit-label" style="width: 120px">
+                                <label for="ShopPriceMid">Major</label>
+                            </div>
+                            <div class="editor-field">
+                                <select class="form-control">
+                                    <option>SE</option>
+                                    <option>SB</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="top: -27px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Update Information</h4>
+            </div>
+            <form id="editForm">
+                <div class="modal-body">
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopName">Name</label>
+                        </div>
+                        <div class="editor-field">
+                            <input id="eName" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopName">Class</label>
+                        </div>
+                        <div class="editor-field">
+                            <input id="eClass" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopName">Account</label>
+                        </div>
+                        <div class="editor-field">
+                            <input id="eAccount" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopAddress">ID</label>
+                        </div>
+                        <div class="editor-field">
+                            <input id="eID" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopPhone">Period</label>
+                        </div>
+                        <div class="editor-field">
+                            <input id=" " type="text" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopAddress">Phone</label>
+                        </div>
+                        <div class="editor-field">
+                            <input id="ePhone" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopAddress">Email</label>
+                        </div>
+                        <div class="editor-field">
+                            <input id="eEmail" type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="DistrictId">Role</label>
+                        </div>
+                        <div class="editor-field ">
+                            <select class="form-control">
+                                <option>Employee</option>
+                                <option>Student</option>
+                                <option>Instructor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label" style="width: 120px">
+                            <label for="ShopPriceMid">Major</label>
+                        </div>
+                        <div class="editor-field">
+                            <select class="form-control">
+                                <option>SE</option>
+                                <option>SB</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+}
+else
+{
+    @Html.Partial("Error")
+}
+
+@section Scripts {
+    <script src="~/Scripts/User/user.js"></script>
+}

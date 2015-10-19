@@ -1,0 +1,30 @@
+﻿@using DatieProject.Models
+@{ var session = (ApplicationUser) Session["User"]; }
+@if (Session["User"] != null)
+{
+    <div id="dropDown" class="dropdown" style="margin-right: 30px">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i class="glyphicon glyphicon-user"></i> @session.Info.Username
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>@Html.ActionLink("Log Out", "LogOff", "Login")</li>
+        </ul>
+    </div>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right" style="margin-right: 20px">
+        <li>@Html.ActionLink("Log in", "Index", "Login", routeValues: null, htmlAttributes: new { id = "loginLink", style = "font-weight:bold;" })</li>
+    </ul>
+}
+
+<script type="text/javascript">
+    function open() {
+        $('#dropDown').addClass('open');
+    }
+
+    function close() {
+        $('#dropDown').removeClass('open');
+    }
+</script>

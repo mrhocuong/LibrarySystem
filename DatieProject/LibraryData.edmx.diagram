@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6cdbd0a89dda41c7abfa1f66bb63e224" Name="Diagram1" ZoomLevel="65">
+        <EntityTypeShape EntityType="LibrarySystemModel.Account" Width="1.5" PointX="6" PointY="4.125" />
+        <EntityTypeShape EntityType="LibrarySystemModel.Book" Width="1.5" PointX="3" PointY="4.5" />
+        <EntityTypeShape EntityType="LibrarySystemModel.BookDetail" Width="1.5" PointX="5.25" PointY="9.875" />
+        <EntityTypeShape EntityType="LibrarySystemModel.MajorType" Width="1.5" PointX="0.75" PointY="5.375" />
+        <EntityTypeShape EntityType="LibrarySystemModel.Order" Width="1.5" PointX="8.25" PointY="4.875" />
+        <EntityTypeShape EntityType="LibrarySystemModel.Status" Width="1.5" PointX="6" PointY="13.5" />
+        <EntityTypeShape EntityType="LibrarySystemModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LibrarySystemModel.TagDetail" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="LibrarySystemModel.Tag" Width="1.5" PointX="3" PointY="1.5" />
+        <EntityTypeShape EntityType="LibrarySystemModel.TypeBook" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="LibrarySystemModel.TypeUser" Width="1.5" PointX="3.75" PointY="13.5" />
+        <AssociationConnector Association="LibrarySystemModel.FK_Account_MajorType" />
+        <AssociationConnector Association="LibrarySystemModel.FK_Account_TypeUser" />
+        <AssociationConnector Association="LibrarySystemModel.FK_Order_Account" />
+        <AssociationConnector Association="LibrarySystemModel.FK_Book_MajorType" />
+        <AssociationConnector Association="LibrarySystemModel.FK_Book_TypeBook" />
+        <AssociationConnector Association="LibrarySystemModel.FK_BookDetail_Book" />
+        <AssociationConnector Association="LibrarySystemModel.FK_TagDetail_Book" />
+        <AssociationConnector Association="LibrarySystemModel.FK_Order_Status" />
+        <AssociationConnector Association="LibrarySystemModel.FK_TagDetail_Tags" />
+        <EntityTypeShape EntityType="LibrarySystemModel.OrderDetail" Width="1.5" PointX="10.5" PointY="7.5" />
+        <AssociationConnector Association="LibrarySystemModel.FK_OrderDetail_BookDetail" />
+        <AssociationConnector Association="LibrarySystemModel.FK_OrderDetail_Order" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

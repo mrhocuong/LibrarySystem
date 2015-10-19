@@ -1,0 +1,46 @@
+﻿@model DatieProject.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Search Book";
+    var session = Session["User"];
+}
+@if (session != null)
+{
+   <style type="text/css">
+.dataTables_filter {
+display: none; 
+}
+</style>
+    <div class="container body-content" style="margin-top: 30px;">
+        <div class="input-group">
+            <input id="searchBar" type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button id="searchBarbtn"  class="btn btn-default" type="button" >Search</button>
+            </span>
+        </div><!-- /input-group -->
+        <br/>
+        <table id="table" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>ISBN </th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>TypeBook</th>
+                <th>AvailableInVault</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="dialog"></div>
+   
+}
+else
+{
+    @Html.Partial("Error")
+}
+@section Scripts {
+    <script src="~/Scripts/Search/search.js"></script>
+}

@@ -1,0 +1,125 @@
+﻿<style type="text/css">
+    body {
+         -webkit-font-smoothing: antialiased;
+        background: -ms-radial-gradient(ellipse at center, #335B67 0%, #2C3E50 100%) fixed no-repeat;
+        background: -moz-radial-gradient(ellipse at center, #335B67 0%, #2C3E50 100%) fixed no-repeat;
+        background: -o-radial-gradient(ellipse at center, #335B67 0%, #2C3E50 100%) fixed no-repeat;
+        background: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #335B67), color-stop(1, #2C3E50));
+        background: -webkit-radial-gradient(ellipse at center, #335B67 0%, #2C3E50 100%) fixed no-repeat;
+        background: radial-gradient(ellipse at center, #335B67 0%, #2C3E50 100%) fixed no-repeat;
+        background-color: #335B67;
+    }
+     #wordsearch {
+       
+         float: left;
+         font-family: 'Source Sans Pro', sans-serif;
+         margin: 0px;
+         width: 45%;
+     }
+
+    #wordsearch ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #wordsearch ul li {
+        -moz-transition: background-color 0.75s ease;
+        -o-transition: background-color 0.75s ease;
+        -webkit-transition: background-color 0.75s ease;
+        background-color: rgba(0, 0, 0, .2);
+        color: rgba(255, 255, 255, 0.7);
+        display: block;
+        float: left;
+        font-size: 24px;
+        font-size: 1.6vw;
+        font-weight: 300;
+        list-style: none;
+        margin-bottom: 0.5%;
+        margin-right: 0.5%;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+        text-transform: uppercase;
+        transition: background-color 0.75s ease;
+        width: 12%;
+    }
+
+    #wordsearch ul li.selected {
+        background-color: rgba(26, 188, 156, 0.7);
+        color: rgba(255, 255, 255, 1);
+        font-weight: 400;
+    }
+</style>
+    <div id="wordsearch" style="margin-left: 320px;height: 463px; margin-top: 50px" onclick="Login()">
+        <ul>
+            <li style="height: 55px; line-height: 55px;">f</li>
+            <li style="height: 55px; line-height: 55px;">r</li>
+            <li style="height: 55px; line-height: 55px;">c</li>
+            <li style="height: 55px; line-height: 55px;">d</li>
+            <li style="height: 55px; line-height: 55px;">a</li>
+            <li style="height: 55px; line-height: 55px;">h</li>
+            <li style="height: 55px; line-height: 55px;">y</li>
+            <li style="height: 55px; line-height: 55px;">m</li>
+            <li style="height: 55px; line-height: 55px;">p</li>
+            <li style="height: 55px; line-height: 55px;">i</li>
+            <li style="height: 55px; line-height: 55px;">r</li>
+            <li style="height: 55px; line-height: 55px;">b</li>
+            <li class="one selected" style="height: 55px; line-height: 55px;">4</li>
+            <li class="two selected" style="height: 55px; line-height: 55px;">0</li>
+            <li class="three selected" style="height: 55px; line-height: 55px;">3</li>
+            <li style="height: 55px; line-height: 55px;">w</li>
+            <li style="height: 55px; line-height: 55px;">g</li>
+            <li style="height: 55px; line-height: 55px;">m</li>
+            <li style="height: 55px; line-height: 55px;">n</li>
+            <li style="height: 55px; line-height: 55px;">i</li>
+            <li style="height: 55px; line-height: 55px;">u</li>
+            <li style="height: 55px; line-height: 55px;">d</li>
+            <li style="height: 55px; line-height: 55px;">e</li>
+            <li style="height: 55px; line-height: 55px;">l</li>
+            <li style="height: 55px; line-height: 55px;">b</li>
+            <li style="height: 55px; line-height: 55px;" class="four selected">a</li>
+            <li class="four selected" style="height: 55px; line-height: 55px;">c</li>
+            <li class="five selected" style="height: 55px; line-height: 55px;">c</li>
+            <li class="six selected" style="height: 55px; line-height: 55px;">e</li>
+            <li class="seven selected" style="height: 55px; line-height: 55px;">s</li>
+            <li style="height: 55px; line-height: 55px;">s</li>
+            <li style="height: 55px; line-height: 55px;">c</li>
+            <li style="height: 55px; line-height: 55px;">z</li>
+            <li style="height: 55px; line-height: 55px;">n</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">d</li>
+            <li class="twelve selected" style="height: 55px; line-height: 55px;">e</li>
+            <li class="thirteen selected" style="height: 55px; line-height: 55px;">n</li>
+            <li class="fourteen selected" style="height: 55px; line-height: 55px;">i</li>
+            <li class="fifteen selected" style="height: 55px; line-height: 55px;">e</li>
+            <li style="height: 55px; line-height: 55px;" class="fifteen selected">d</li>
+            <li style="height: 55px; line-height: 55px;">o</li>
+            <li style="height: 55px; line-height: 55px;">t</li>
+            <li style="height: 55px; line-height: 55px;">f</li>
+            <li style="height: 55px; line-height: 55px;">o</li>
+            <li style="height: 55px; line-height: 55px;">i</li>
+            <li style="height: 55px; line-height: 55px;">p</li>
+            <li style="height: 55px; line-height: 55px;">n</li>
+            <li style="height: 55px; line-height: 55px;">s</li>
+            <li style="height: 55px; line-height: 55px;">y</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">p</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">l</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">e</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">a</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">s</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">e</li>
+            <li style="height: 55px; line-height: 55px;">s</li>
+            <li style="height: 55px; line-height: 55px;">y</li>
+            <li style="height: 55px; line-height: 55px;">r</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">l</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">o</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">g</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">i</li>
+            <li class="eleven selected" style="height: 55px; line-height: 55px;">n</li>
+            <li style="height: 55px; line-height: 55px;">u</li>
+        </ul>
+    </div>
+<script>
+    function Login() {
+        window.location.href = "/Login";
+    }
+</script>

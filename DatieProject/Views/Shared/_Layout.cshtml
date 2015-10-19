@@ -1,0 +1,84 @@
+﻿@using DatieProject.Models
+@{
+    var session = Session["User"];
+    var user = (ApplicationUser)Session["User"];
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700" rel="stylesheet" type="text/css"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/x-icon" href="~/Content/favicon.ico"/>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/bundles/MaterialCss")
+    @Styles.Render("~/bundles/Gallery")
+    <style>
+        li:hover {
+            background-color:rgba(255, 255, 255, 0.12);
+            color: #555555;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top">
+    <div id="processBar" class="progress hide" style="margin-bottom: 0px">
+        <div id="process" class="progress-bar progress-bar-danger" style="height: 2px"></div>
+    </div>
+    <div id="homepage" class="navbar-header">
+        @Html.ActionLink("Libary System Management", "HomePage", "Login", null, new {@class = "navbar-brand"})
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+
+        <ul class="nav navbar-nav">
+            @if (session != null)
+            {
+                <li id="li1">@Html.ActionLink("Book Manager", "Index", "Datie")</li>
+                <li id="li3"> @Html.ActionLink("Search Book", "Index", "Search") </li>
+                <li id="li2"> @Html.ActionLink("Member Manager", "Index", "User") </li>
+                if (user.Info.IsAdminMaster)
+                 {
+                       <li id="li4"> @Html.ActionLink("Borrow Manager", "Index", "Borrow") </li>
+                 }
+              
+            }
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            @Html.Partial("_LoginPartial")
+        </ul>
+    </div>
+</div>
+<div class="container body-content">
+    @RenderBody()
+</div>
+@*<div id="nav-bottom" class="navbar navbar-default navbar-fixed-bottom">
+    <center style="margin-top: 16px">
+        <p>&copy; @DateTime.Now.Year - Datie Management (c) - CuongHH - ThaiTC - ThienNLH - Class SE0870A - SAD</p>
+    </center>
+</div>*@
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Scripts.Render("~/bundles/Datatables")
+@Scripts.Render("~/bundles/blockUI")
+@Scripts.Render("~/bundles/bootbox")
+@Scripts.Render("~/bundles/numberic")
+@Scripts.Render("~/bundles/Material")
+@Scripts.Render("~/bundles/GalleryBody")
+@Scripts.Render("~/bundles/jqueryval")
+@RenderSection("scripts", false)
+<script type="text/javascript">
+    $(window).scroll(function() {
+        if ($(window).scrollTop() + $(window).height() === $(document).height()) {
+            $("#nav-bottom").addClass("hide");
+        } else {
+            $("#nav-bottom").removeClass("hide");
+        }
+    });
+</script>
+</body>
+</html>

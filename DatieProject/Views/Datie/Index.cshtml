@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Libary System Management";
+    var session = Session["User"];
+}
+@if (session != null)
+{
+    <style type="text/css">
+        .dataTables_filter {
+            display: none;
+        }
+    </style>
+
+    <button class="btn btn-primary" onclick=" AddShop(this, event) " style="margin-top: 20px; margin-left: 15px"> Add New Book</button>
+    
+      <div class="input-group">
+            <input id="searchBar" type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+            </span>
+        </div><!-- /input-group -->
+    <div class="container body-content" style="margin-top: 30px;">
+        <table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    @*<th>ISBN</th>*@
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Description</th>
+                    <th>TypeBook</th>
+                    <th>Major</th>
+                    <th>AvailableInVault</th>
+                    <th>Deleted</th>
+                    <th>Borrowed</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="dialog"></div>
+}
+else
+{
+   @Html.Partial("Error")
+}
+
+
+@section Scripts {
+    <script src="~/Scripts/Datie/datie.js"></script>
+}

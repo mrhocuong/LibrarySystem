@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Libary System Management";
+    var session = Session["User"];
+}
+@if (session != null)
+{
+    <style type="text/css">
+        .dataTables_filter {
+            display: none;
+        }
+    </style>
+
+    <div style="margin-top: 30px">
+        <button class="btn btn-info active" id="borrowBtn">Borrow</button>
+        <button class="btn btn-success " id="returnBtn">Return</button>
+        <div id="status"><center><h2>Borrow Book</h2></center></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-control">
+                    <div class="edit-label">
+                        <label for="ShopName">StudentID</label>
+                    </div>
+                    <div class="editor-field">
+                        <input id="studentID" type="text" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-control">
+                    <div class="edit-label">
+                        <label for="ShopName">BookID</label>
+                    </div>
+                    <div class="editor-field">
+                        <input id="BookId" type="text" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="padding-top: 60px;">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-control">
+                    <div class="edit-label">
+                        <label for="ShopName">Name</label>
+                    </div>
+                    <div class="editor-field">
+                        <input id="name" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-control">
+                    <div class="edit-label">
+                        <label for="ShopName">Class</label>
+                    </div>
+                    <div class="editor-field">
+                        <input id="class" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-control">
+                    <div class="edit-label">
+                        <label for="ShopName">Major</label>
+                    </div>
+                    <div class="editor-field">
+                        <input id="major" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 15px">
+            <div class="col-md-4">
+                <div class="form-control">
+                    <div class="edit-label">
+                        <label for="ShopName">Phone</label>
+                    </div>
+                    <div class="editor-field">
+                        <input id="phone" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-control">
+                    <div class="edit-label">
+                        <label for="ShopName">Email</label>
+                    </div>
+                    <div class="editor-field">
+                        <input id="email" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-control">
+                    <div class="edit-label">
+                        <label for="ShopName">Role</label>
+                    </div>
+                    <div class="editor-field">
+                        <input id="role" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-danger" id="clearbtn">Clear</button>
+    <button class="btn btn-primary">History</button>
+    <button class="btn btn-info">Add</button>
+    <!-- /input-group -->
+    <div class="container body-content" style="margin-top: 30px;">
+        <table id="example" class="display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>BookId</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Borrow Date</th>
+                    <th>Return Date</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div id="dialog"></div>
+}
+else
+{
+    @Html.Partial("Error")
+}
+@section Scripts {
+    <script src="~/Scripts/Borrow/borrow.js"></script>
+}

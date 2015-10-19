@@ -1,0 +1,88 @@
+﻿@model DatieProject.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Libary System Management";
+    var session = Session["User"];
+}
+@if (session != null)
+{
+<style>
+    .child {
+        display: inline-block;
+        *display: inline; /* for IE7*/
+        *zoom: 1; /* for IE7*/
+        min-width: 100px;
+        min-height: 50px;
+        margin-right: 10px;
+        white-space: normal;
+    }
+    .parent {
+        margin-top: 100px;
+        white-space: nowrap;
+    }
+</style>
+
+<script>
+    function bigImg(x) {
+        $(x).animate({
+            width: "150px",
+            height: "150px"
+        }, 100);
+    }
+
+    function thinImg(x) {
+        $(x).animate({
+            width: "120px",
+            height: "120px",
+        }, 100);
+    }
+
+    function Datie() {
+        window.location.href = "/Datie";
+    }
+
+    function User() {
+        window.location.href = "/User";
+    }
+
+    function Search() {
+        window.location.href = "/Borrow";
+    }
+</script>
+<center>
+    <h2 style="margin-top: 50px">Datie Management System</h2>
+
+    <div class="parent">
+        <div class="child">
+            <div style="padding-left: 50px" onclick="Datie() ">
+                <div class="alert-primary" style="height: 200px; width: 200px;">
+                    <img src="~/Content/database.png" style="height: 130px; margin-top: 20px; width: 130px;" onmouseover=" bigImg(this) " onmouseout=" thinImg(this) "/><br/>
+                    <span style="font-size: 20px">Book Management</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="child">
+            <div style="padding-left: 100px" onclick=" User() ">
+                <div class="alert-primary" style="height: 200px; width: 200px;">
+                    <img src="~/Content/user.png" style="height: 130px; margin-top: 20px; width: 130px;" onmouseover=" bigImg(this) " onmouseout=" thinImg(this) "/><br/>
+                    <span style="font-size: 20px">Member Management</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="child">
+            <div style="padding-left: 100px" onclick=" Search() ">
+                <div class="alert-primary" style="height: 200px; width: 200px;">
+                    <img src="~/Content/comments.png" style="height: 130px; margin-top: 20px; width: 130px;" onmouseover=" bigImg(this) " onmouseout=" thinImg(this) " /><br />
+                    <span style="font-size: 20px">Borrow Manager    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+}
+else
+{
+    @Html.Partial("Error")
+}

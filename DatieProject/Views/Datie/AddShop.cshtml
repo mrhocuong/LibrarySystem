@@ -1,0 +1,116 @@
+﻿@model DatieProject.Models.BookModel
+
+<div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="top: -27px">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Add Book</h4>
+            </div>
+            <form id="editForm">
+                <div class="modal-body">
+                    <div class="editor-field">
+                        @Html.TextBoxFor(x => x.ISBN, new { @type = "hidden" })
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopName">ISBN</label>
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(x => x.ISBN, new { @style = "width:400px", @class = "form-control", @required = true })
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopName">ID</label>
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(x => x.ID, new { @style = "width:400px", @class = "form-control", @required = true })
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopName">Name</label>
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(x => x.Name, new { @style = "width:400px", @class = "form-control", @required = true })
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopAddress">Author</label>
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(x => x.Author, new { @style = "width:400px", @class = "form-control", @required = true })
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopPhone">Description</label>
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(x => x.Description, new { @style = "width:400px", @class = "form-control numeric" })
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="DistrictId">TypeBook</label>
+                        </div>
+                        <div class="editor-field ">
+                            <select class="form-control">
+                                <option>Text book</option>
+                                <option>Magazine</option>
+                                <option>Comic</option>
+                                <option>Poem</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-control-manual">
+                        <div class="edit-label" style="width: 120px">
+                            <label for="ShopPriceMid">Major</label>
+                        </div>
+                        <div class="editor-field">
+                            <select class="form-control">
+                                <option>SE</option>
+                                <option>SB</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    @*<div class="form-control-manual">
+                        <div class="edit-label">
+                            <label for="ShopTimeMid">Time Mid (H)</label>
+                        </div>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(x => x.AvailableInVault, new { @style = "width:400px", @class = "form-control numeric" })
+                        </div>
+                    </div>*@
+
+                    @*<div class="form-control-manual">
+                        <div class="edit-label" style="width: 122px">
+                            <label>IsDelete</label>
+                        </div>
+                        <div>
+                            @if (Model.IsDelete)
+                            {
+                                <input type="checkbox" id="ShopIsDeleted" checked="checked" />
+                            }
+                            else
+                            {
+                                <input type="checkbox" id="ShopIsDeleted" />
+                            }
+                        </div>
+                    </div>*@
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" onclick=" Edit(this, event) " data-id="@Model.ISBN">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Spam Management";
+    var session = Session["User"];
+}
+@if (session != null)
+{
+    <div class="container body-content" style="margin-top: 30px;">
+        <table id="table" class="display" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>IdCmt</th>
+                <th>Username</th>
+                <th width="70">Shop ID</th>
+                <th>Shop Name</th>
+                <th width="350">Content</th>
+                <th width="110">Comment Date</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="dialog"></div>
+}
+else
+{
+    @Html.Partial("Error")
+}
+
+@section Scripts {
+    <script src="~/Scripts/Spam/spam.js"></script>
+}
